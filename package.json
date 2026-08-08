@@ -1,0 +1,67 @@
+{
+  "name": "@zaniluca/effect-rules",
+  "version": "0.1.0",
+  "description": "Opinionated Oxlint rules and remediation skills for Effect codebases.",
+  "keywords": [
+    "agent-skills",
+    "effect",
+    "effect-ts",
+    "lint",
+    "linter",
+    "oxlint"
+  ],
+  "homepage": "https://github.com/zaniluca/effect-rules#readme",
+  "bugs": {
+    "url": "https://github.com/zaniluca/effect-rules/issues"
+  },
+  "license": "MIT",
+  "author": "Luca Zani",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaniluca/effect-rules.git"
+  },
+  "files": [
+    "src",
+    "types",
+    "skills",
+    "LICENSE",
+    "README.md"
+  ],
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./configs": {
+      "types": "./types/configs.d.ts",
+      "import": "./src/configs.js",
+      "default": "./src/configs.js"
+    },
+    "./skills/*": "./skills/*/SKILL.md",
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
+  "scripts": {
+    "check": "pnpm lint && pnpm fmt:check && pnpm pack:check",
+    "fmt": "oxfmt .",
+    "fmt:check": "oxfmt --check .",
+    "lint": "oxlint -c .oxlintrc.json src scripts --deny-warnings",
+    "pack:check": "node scripts/pack-check.mjs"
+  },
+  "devDependencies": {
+    "oxfmt": "0.62.0",
+    "oxlint": "1.77.0"
+  },
+  "peerDependencies": {
+    "oxlint": ">=1.56.0 <2"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
