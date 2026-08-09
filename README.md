@@ -59,24 +59,6 @@ npx skills add zaniluca/effect-rules
 Each diagnostic points to the relevant remediation skill. Rule authors should
 start with `effect-rules-authoring`.
 
-## Releasing
-
-Preview the release checks and operations without changing GitHub:
-
-```bash
-pnpm run release --dry-run
-```
-
-Create the tag matching `package.json` and publish the GitHub Release:
-
-```bash
-pnpm run release
-```
-
-The script only accepts stable `X.Y.Z` versions, requires a clean and fully
-pushed branch, runs `pnpm check`, and asks for the expected tag as confirmation.
-Publishing the GitHub Release triggers the npm publish workflow.
-
 ## Rules
 
 | Rule                              | Preset      | Purpose                                                                 |
