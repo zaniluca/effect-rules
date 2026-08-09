@@ -1,6 +1,10 @@
 {
   "name": "@zaniluca/effect-rules",
   "version": "0.1.0",
+  "type": "module",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Opinionated Oxlint rules and remediation skills for Effect codebases.",
   "keywords": [
     "agent-skills",
@@ -20,6 +24,14 @@
     "type": "git",
     "url": "git+https://github.com/zaniluca/effect-rules.git"
   },
+  "scripts": {
+    "check": "pnpm lint && pnpm fmt:check && pnpm pack:check",
+    "fmt": "oxfmt .",
+    "fmt:check": "oxfmt --check .",
+    "lint": "oxlint -c .oxlintrc.json src scripts --deny-warnings",
+    "pack:check": "npm pack --dry-run",
+    "release": "node scripts/release.mjs"
+  },
   "files": [
     "src",
     "types",
@@ -27,31 +39,17 @@
     "LICENSE",
     "README.md"
   ],
-  "type": "module",
   "exports": {
     ".": {
       "types": "./types/index.d.ts",
-      "import": "./src/index.js",
       "default": "./src/index.js"
     },
     "./configs": {
       "types": "./types/configs.d.ts",
-      "import": "./src/configs.js",
       "default": "./src/configs.js"
     },
     "./skills/*": "./skills/*/SKILL.md",
     "./package.json": "./package.json"
-  },
-  "publishConfig": {
-    "access": "public",
-    "provenance": true
-  },
-  "scripts": {
-    "check": "pnpm lint && pnpm fmt:check && pnpm pack:check",
-    "fmt": "oxfmt .",
-    "fmt:check": "oxfmt --check .",
-    "lint": "oxlint -c .oxlintrc.json src scripts --deny-warnings",
-    "pack:check": "node scripts/pack-check.mjs"
   },
   "devDependencies": {
     "oxfmt": "0.62.0",

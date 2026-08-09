@@ -21,9 +21,7 @@ From the repository root:
 
 ```bash
 pnpm install --frozen-lockfile
-pnpm lint
-pnpm fmt:check
-pnpm pack:check
+pnpm check
 ```
 
 Read `skills/effect-rules-authoring/SKILL.md` before adding or broadening a

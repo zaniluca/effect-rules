@@ -26,7 +26,8 @@ jobs:
       - run: npm install --global npm@11
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
-      - run: node scripts/verify-release-tag.mjs
+      - name: Verify release tag
+        run: node -e 'const { version } = require("./package.json"); if (process.env.RELEASE_TAG !== `v${version}`) process.exit(1)'
         env:
           RELEASE_TAG: ${{ github.event.release.tag_name }}
       - run: npm publish --access public --provenance
