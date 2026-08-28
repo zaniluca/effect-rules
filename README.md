@@ -3,6 +3,22 @@
 Oxlint rules for enforcing Effect conventions, with companion remediation
 skills that help apply the recommended fixes.
 
+## Effect diagnostics
+
+Install [`@effect/tsgo`](https://github.com/Effect-TS/tsgo) for the official,
+type-aware Effect diagnostics, quick fixes, and refactors. Follow its setup
+guide to install versions of TypeScript, Oxlint, and `oxlint-tsgolint` that are
+compatible with the selected `@effect/tsgo` release.
+
+```bash
+pnpm add -D @effect/tsgo
+pnpm exec effect-tsgo setup
+```
+
+This package complements `@effect/tsgo` with syntax-based architectural
+policies and remediation skills. It intentionally does not duplicate rules
+already provided by `@effect/tsgo`.
+
 ## Oxlint plugin
 
 Install Oxlint and the plugin together:
@@ -72,13 +88,11 @@ start with `effect-rules-authoring`.
 | `no-inline-schema-compile`        | Recommended | Require compiled Schema functions to be hoisted out of function bodies. |
 | `no-instanceof-error`             | Strict      | Disallow `instanceof Error` checks in Effect domain code.               |
 | `no-instanceof-tagged-error`      | Strict      | Disallow `instanceof` checks for tagged errors.                         |
-| `no-json-parse`                   | Recommended | Require Effect Schema for JSON parsing.                                 |
 | `no-manual-tag-check`             | Strict      | Disallow manual `_tag` inspection.                                      |
 | `no-match-orelse`                 | Strict      | Require exhaustive Effect Match chains.                                 |
 | `no-promise-catch`                | Strict      | Disallow Promise-style catch calls in Effect domain code.               |
 | `no-promise-client-surface`       | Recommended | Disallow Promise-returning methods on Effect client interfaces.         |
 | `no-promise-reject`               | Recommended | Disallow Promise rejection APIs in Effect domain code.                  |
-| `no-raw-fetch`                    | Recommended | Require Effect HttpClient instead of ambient `fetch`.                   |
 | `no-redundant-error-factory`      | Strict      | Disallow helpers that only construct one tagged error.                  |
 | `no-redundant-primitive-cast`     | Strict      | Disallow suspicious primitive assertions.                               |
 | `no-switch-statement`             | Strict      | Prefer Effect Match over JavaScript switch statements.                  |
@@ -89,7 +103,6 @@ start with `effect-rules-authoring`.
 | `no-vitest-import`                | Recommended | Require Effect tests to import from `@effect/vitest`.                   |
 | `prefer-effect-predicate`         | Strict      | Prefer Effect Predicate nullish helpers.                                |
 | `prefer-schema-inferred-types`    | Strict      | Require object types to be inferred from nearby Effect Schemas.         |
-| `prefer-yield-tagged-error`       | Recommended | Prefer yielding tagged errors directly inside Effect generators.        |
 
 ## Attribution
 
