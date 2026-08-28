@@ -7,13 +7,11 @@ import noInlineObjectTypeAssertion from "./rules/no-inline-object-type-assertion
 import noInlineSchemaCompile from "./rules/no-inline-schema-compile.js";
 import noInstanceofError from "./rules/no-instanceof-error.js";
 import noInstanceofTaggedError from "./rules/no-instanceof-tagged-error.js";
-import noJsonParse from "./rules/no-json-parse.js";
 import noManualTagCheck from "./rules/no-manual-tag-check.js";
 import noMatchOrElse from "./rules/no-match-orelse.js";
 import noPromiseCatch from "./rules/no-promise-catch.js";
 import noPromiseClientSurface from "./rules/no-promise-client-surface.js";
 import noPromiseReject from "./rules/no-promise-reject.js";
-import noRawFetch from "./rules/no-raw-fetch.js";
 import noRedundantErrorFactory from "./rules/no-redundant-error-factory.js";
 import noRedundantPrimitiveCast from "./rules/no-redundant-primitive-cast.js";
 import noSwitchStatement from "./rules/no-switch-statement.js";
@@ -24,7 +22,6 @@ import noUnknownShapeProbing from "./rules/no-unknown-shape-probing.js";
 import noVitestImport from "./rules/no-vitest-import.js";
 import preferEffectPredicate from "./rules/prefer-effect-predicate.js";
 import preferSchemaInferredTypes from "./rules/prefer-schema-inferred-types.js";
-import preferYieldTaggedError from "./rules/prefer-yield-tagged-error.js";
 
 export default {
   meta: {
@@ -40,13 +37,11 @@ export default {
     "no-inline-schema-compile": noInlineSchemaCompile,
     "no-instanceof-error": noInstanceofError,
     "no-instanceof-tagged-error": noInstanceofTaggedError,
-    "no-json-parse": noJsonParse,
     "no-manual-tag-check": noManualTagCheck,
     "no-match-orelse": noMatchOrElse,
     "no-promise-catch": noPromiseCatch,
     "no-promise-client-surface": noPromiseClientSurface,
     "no-promise-reject": noPromiseReject,
-    "no-raw-fetch": noRawFetch,
     "no-redundant-error-factory": noRedundantErrorFactory,
     "no-redundant-primitive-cast": noRedundantPrimitiveCast,
     "no-switch-statement": noSwitchStatement,
@@ -57,6 +52,5 @@ export default {
     "no-vitest-import": noVitestImport,
     "prefer-effect-predicate": preferEffectPredicate,
     "prefer-schema-inferred-types": preferSchemaInferredTypes,
-    "prefer-yield-tagged-error": preferYieldTaggedError,
   },
 };

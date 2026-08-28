@@ -9,13 +9,10 @@ export const recommendedRules = {
   "effect/no-effect-internal-tags": "error",
   "effect/no-inline-object-type-assertion": "error",
   "effect/no-inline-schema-compile": "error",
-  "effect/no-json-parse": "error",
   "effect/no-promise-client-surface": "error",
   "effect/no-promise-reject": "error",
-  "effect/no-raw-fetch": "error",
   "effect/no-ts-nocheck": "error",
   "effect/no-vitest-import": "error",
-  "effect/prefer-yield-tagged-error": "error",
 };
 
 export const strictRules = {
@@ -43,7 +40,6 @@ export const boundaryRules = {
   "effect/no-instanceof-error": "off",
   "effect/no-promise-catch": "off",
   "effect/no-promise-reject": "off",
-  "effect/no-raw-fetch": "off",
   "effect/no-try-catch-or-throw": "off",
   "effect/no-unknown-error-message": "off",
 };
